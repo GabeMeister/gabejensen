@@ -18,6 +18,9 @@ import HomePage from './components/HomePage';
 import LinksPage from './components/LinksPage';
 
 const useStyles = makeStyles({
+	appBar: {
+		backgroundColor: '#1976d2'
+	},
 	toolbar: {
 		justifyContent: 'space-between'
 	},
@@ -46,7 +49,7 @@ const App = () => {
 		<Router>
 			<div className="App">
 				<header>
-					<AppBar position="static">
+					<AppBar className={classes.appBar} position="static">
 						<Toolbar className={classes.toolbar}>
 							<IconButton edge="start">
 								<MenuIcon />
