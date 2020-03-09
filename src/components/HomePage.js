@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const useStyles = makeStyles({
+    landingPage: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+    }
+})
 
 const HomePage = () => {
+    const classes = useStyles();
     const [url, setUrl] = useState('');
 
     useEffect(() => {
@@ -8,13 +20,22 @@ const HomePage = () => {
             .then(resp => resp.json())
             .then(resp => {
                 setUrl(resp[0]);
+            })
+            .catch(resp => {
+                setUrl('Error fetching quote!');
             });
     }, []);
 
     return (
-        <div>
+        <div className={classes.landingPage}>
             <h1>Welcome to Gabe's Portfolio</h1>
-            <span>{url}</span>
+            {url
+                ? (
+                    <span>{url}</span>
+                ) : (
+                    <CircularProgress />
+                )
+            }
         </div>
     );
 };
