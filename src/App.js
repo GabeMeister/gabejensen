@@ -12,11 +12,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import AboutPage from './components/AboutPage';
-import HomePage from './components/HomePage';
-import PortfolioPage from './components/PortfolioPage';
-import BlogPage from './components/BlogPage';
-import ContactPage from './components/ContactPage';
+import AboutPage from './components/pages/AboutPage';
+import HomePage from './components/pages/HomePage';
+import PortfolioPage from './components/pages/PortfolioPage';
+import BlogPage from './components/pages/BlogPage';
+import ContactPage from './components/pages/ContactPage';
 
 const useStyles = makeStyles({
 	appBar: {
@@ -62,10 +62,26 @@ const App = () => {
 								</Link>
 							</IconButton>
 							<nav className={classes.btnGroup}>
-								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/about">About</Link></Typography>
-								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/portfolio">Portfolio</Link></Typography>
-								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/blog">Blog</Link></Typography>
-								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/contact">Contact</Link></Typography>
+								<Typography variant="h6">
+									<Link className={classes.navbarLink} component={RouterLink} to="/about">
+										About
+									</Link>
+								</Typography>
+								<Typography variant="h6">
+									<Link className={classes.navbarLink} component={RouterLink} to="/portfolio">
+										Portfolio
+									</Link>
+								</Typography>
+								<Typography variant="h6">
+									<Link className={classes.navbarLink} component={RouterLink} to="/blog">
+										Blog
+									</Link>
+								</Typography>
+								<Typography variant="h6">
+									<Link className={classes.navbarLink} component={RouterLink} to="/contact">
+										Contact
+									</Link>
+								</Typography>
 							</nav>
 						</Toolbar>
 					</AppBar>
