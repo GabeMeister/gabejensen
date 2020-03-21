@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import AboutPage from './components/AboutPage';
 import HomePage from './components/HomePage';
-import LinksPage from './components/LinksPage';
+import PortfolioPage from './components/PortfolioPage';
 
 const useStyles = makeStyles({
 	appBar: {
@@ -58,7 +58,7 @@ const App = () => {
 							<nav className={classes.btnGroup}>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/">Home</Link></Typography>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/about">About</Link></Typography>
-								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/links">Links</Link></Typography>
+								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/portfolio">Portfolio</Link></Typography>
 							</nav>
 						</Toolbar>
 					</AppBar>
@@ -69,8 +69,8 @@ const App = () => {
 						<Route path="/about">
 							<AboutPage />
 						</Route>
-						<Route path="/links">
-							<LinksPage />
+						<Route path="/portfolio">
+							<PortfolioPage />
 						</Route>
 						<Route path="/">
 							<HomePage />
