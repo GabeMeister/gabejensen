@@ -40,7 +40,8 @@ const useStyles = makeStyles({
 	},
 	appBody: {
 		boxSizing: 'border-box',
-		padding: '10px 30px'
+		padding: '10px 30px',
+		textAlign: 'center'
 	},
 	homePageIcon: {
 		height: '40px'
