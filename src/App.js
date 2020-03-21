@@ -8,7 +8,6 @@ import {
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
-import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -37,11 +36,14 @@ const useStyles = makeStyles({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		width: '400px'
+		width: '350px'
 	},
 	appBody: {
 		boxSizing: 'border-box',
 		padding: '10px 30px'
+	},
+	homePageIcon: {
+		height: '40px'
 	}
 });
 
@@ -55,10 +57,11 @@ const App = () => {
 					<AppBar className={classes.appBar} position="static">
 						<Toolbar className={classes.toolbar}>
 							<IconButton edge="start">
-								<MenuIcon />
+								<Link className={classes.navbarLink} component={RouterLink} to="/">
+									<img className={classes.homePageIcon} src="/tomato.png" alt="Gabe Jensen Home Page" />
+								</Link>
 							</IconButton>
 							<nav className={classes.btnGroup}>
-								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/">Home</Link></Typography>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/about">About</Link></Typography>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/portfolio">Portfolio</Link></Typography>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/blog">Blog</Link></Typography>
