@@ -16,12 +16,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import AboutPage from './components/AboutPage';
 import HomePage from './components/HomePage';
 import PortfolioPage from './components/PortfolioPage';
+import BlogPage from './components/BlogPage';
+import ContactPage from './components/ContactPage';
 
 const useStyles = makeStyles({
 	appBar: {
 		backgroundColor: '#1976d2'
 	},
 	toolbar: {
+		display: 'flex',
 		justifyContent: 'space-between'
 	},
 	navbarBtn: {
@@ -34,7 +37,7 @@ const useStyles = makeStyles({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		width: '200px'
+		width: '400px'
 	},
 	appBody: {
 		boxSizing: 'border-box',
@@ -54,11 +57,12 @@ const App = () => {
 							<IconButton edge="start">
 								<MenuIcon />
 							</IconButton>
-							<Typography variant="h6">Gabe Jensen's Portfolio</Typography>
 							<nav className={classes.btnGroup}>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/">Home</Link></Typography>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/about">About</Link></Typography>
 								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/portfolio">Portfolio</Link></Typography>
+								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/blog">Blog</Link></Typography>
+								<Typography variant="h6"><Link className={classes.navbarLink} component={RouterLink} to="/contact">Contact</Link></Typography>
 							</nav>
 						</Toolbar>
 					</AppBar>
@@ -71,6 +75,12 @@ const App = () => {
 						</Route>
 						<Route path="/portfolio">
 							<PortfolioPage />
+						</Route>
+						<Route path="/blog">
+							<BlogPage />
+						</Route>
+						<Route path="/contact">
+							<ContactPage />
 						</Route>
 						<Route path="/">
 							<HomePage />

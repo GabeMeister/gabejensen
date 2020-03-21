@@ -28,7 +28,7 @@ const HomePage = () => {
 
     return (
         <div className={classes.landingPage}>
-            <h1>Welcome to Gabe's Portfolio</h1>
+            <h1>What's up. I'm Gabe.</h1>
             {url
                 ? (
                     <span>{url}</span>
