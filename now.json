@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "REACT_APP_DROPBOX_ACCESS_TOKEN": "@react_app_dropbox_access_token"
+    }
+  }
+}
