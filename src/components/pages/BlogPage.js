@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -28,10 +29,10 @@ const BlogPage = () => {
     return (
         <div>
             <Spacer verticalSize="60px" />
-            <Typography variant="h2">My Work Journal:</Typography>
+            <Typography variant="h2">Check out my work journal:</Typography>
             <Spacer verticalSize="60px" />
             <div className={classes.cardWrapper}>
-                {!!journalContent.length && (
+                {!!journalContent.length ? (
                     journalContent.map(entry => (
                         <Card key={`${entry.time}${entry.date}${entry.text}`}>
                             <Typography variant="h5">{entry.time}</Typography>
@@ -40,7 +41,14 @@ const BlogPage = () => {
                             <Typography variant="body1">{entry.text}</Typography>
                         </Card>
                     ))
-                )}
+                ) : (
+                        <>
+                            <div>
+                                <CircularProgress />
+                            </div>
+                            <Typography variant="caption" color="textSecondary">Loading...</Typography>
+                        </>
+                    )}
             </div>
         </div>
     );
