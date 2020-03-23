@@ -1,16 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+    Link as RouterLink
+} from 'react-router-dom';
 
 import Card from '../Card';
 import Spacer from '../Spacer';
 import getJournalContent from '../../lib/dropbox';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 const useStyles = makeStyles({
-    cardWrapper: {
+    contentWrapper: {
         width: '600px',
         margin: 'auto'
+    },
+    helpLink: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    helpLinkText: {
+        marginLeft: '3px',
+    },
+    helpLinkIcon: {
+        fontSize: '0.75rem',
+        marginTop: '-1px'
     }
 });
 
@@ -24,14 +41,27 @@ const BlogPage = () => {
         });
     }, []);
 
-    // TODO: add in link to https://www.dropbox.com/developers/documentation/http/documentation#files-download
-
     return (
-        <div>
+        <div className={classes.contentWrapper}>
             <Spacer verticalSize="60px" />
-            <Typography variant="h2">Check out my work journal:</Typography>
+            <Typography variant="h3">My random work thoughts:</Typography>
+            <Spacer verticalSize="10px" />
+            <Link
+                target="_blank"
+                rel="noopener"
+                component={RouterLink}
+                underline="none"
+                to="/how-my-journal-works"
+            >
+                <div className={classes.helpLink}>
+                    <HelpOutlineIcon className={classes.helpLinkIcon} />
+                    <Typography className={classes.helpLinkText} variant="caption">
+                        How does this work?
+                    </Typography>
+                </div>
+            </Link>
             <Spacer verticalSize="60px" />
-            <div className={classes.cardWrapper}>
+            <div>
                 {!!journalContent.length ? (
                     journalContent.map(entry => (
                         <Card key={`${entry.time}${entry.date}${entry.text}`}>

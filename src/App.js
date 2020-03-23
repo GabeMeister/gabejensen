@@ -17,6 +17,7 @@ import HomePage from './components/pages/HomePage';
 import PortfolioPage from './components/pages/PortfolioPage';
 import BlogPage from './components/pages/BlogPage';
 import ContactPage from './components/pages/ContactPage';
+import JournalExplanationPage from './components/pages/JournalExplanationPage';
 
 const useStyles = makeStyles({
 	appBar: {
@@ -101,6 +102,9 @@ const App = () => {
 						</Route>
 						<Route path="/contact">
 							<ContactPage />
+						</Route>
+						<Route path="/how-my-journal-works">
+							<JournalExplanationPage />
 						</Route>
 						<Route path="/">
 							<HomePage />
