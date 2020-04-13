@@ -23,7 +23,7 @@ const PortfolioPage = () => {
                         target="_blank"
                         rel="noopener"
                         underline="none"
-                        href="https://fastgif.now.sh/"
+                        href="https://fastgif.netlify.com/"
                     >
                         <LaunchIcon
                             style={{ fontSize: 15, marginRight: 3, transform: 'translate(0, 2px)' }}
